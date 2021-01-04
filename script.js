@@ -20,22 +20,33 @@ function generatePassword() {
   var inputPassword = false;
 
   //variable to store user input for the length of password
+  
+  if (inputPassword !== 8 || inputPassword !== 128) {
+         inputPassword = parseInt(prompt("How long would you like your password to be?"));
+  }
+ 
+  //conditional to check if user input is at least 8 characters
+  if (inputPassword < 8 ) {
+    alert("Please enter at least 8 characters");
+    return;
+  }
 
-  if (inputPassword < 8 || inputPassword > 128) {
-     inputPassword = prompt("How long would you like your password to be?");
-
+  //conditional to check if user input is greater then 128 characters
+  if (inputPassword > 128) {
+    alert("Please enter less then 128 characters");
+    return;
   }
   //Variable to store boolean to include lower case or not. 
-  var hasLowerCase = confirm("Click Ok to confirm including lower case characters");
+  var hasLowerCase = confirm("Click Ok to confirm if you would like to include lower case characters?");
 
   //Variable to store boolean to include upper case or not. 
-  var hasUpperCase = confirm("Click Ok to confirm including upper case characters");
+  var hasUpperCase = confirm("Click Ok to confirm if you would like to include upper case characters?");
 
   //Variable to store boolean to include numbers or not. 
-  var hasNumbers = confirm("Click Ok to confirm this will include numbers");
+  var hasNumbers = confirm("Click Ok to confirm if you would like to include numbers?");
 
   //Variable to store boolean to include special characters or not. 
-  var hasSpecialCharacters = confirm("Click Ok to confirm if you would like to use special characters");
+  var hasSpecialCharacters = confirm("Click Ok to confirm if you would like to use special characters?");
 
   //Created choices array to concatinate user selections.
   var choices = [];
