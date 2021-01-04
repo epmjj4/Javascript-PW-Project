@@ -20,8 +20,9 @@ function generatePassword() {
   var inputPassword = false;
 
   //variable to store user input for the length of password
+
   if (inputPassword < 8 || inputPassword > 128) {
-    var inputPassword = prompt("How long would you like your password to be?");
+     inputPassword = prompt("How long would you like your password to be?");
 
   }
   //Variable to store boolean to include lower case or not. 
@@ -57,12 +58,14 @@ function generatePassword() {
   if (hasSpecialCharacters === true) {
     choices = choices.concat(specialChar);
   }
-  //If everything is setup correctly, choices will be shown in console.
-  console.log(choices);
-
-  var finalPassword = "";
-  for (var i = 0; i < choices; i++) {
-    Math.floor(Math.random() * inputPassword);
+  
+  
+  var finalPassword = [];
+  
+  for (var i = 0; i < inputPassword; i++) {
+    finalPassword.push(choices[Math.floor(Math.random() * choices.length)]);
+    
   }
+return finalPassword.join('');
 
 }
