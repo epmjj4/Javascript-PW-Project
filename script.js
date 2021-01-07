@@ -41,28 +41,28 @@ function generatePassword() {
   //I created this Variable to store boolean answer from user asking if they want to include lower case characters. 
   var hasLowerCase = confirm("Click Ok to confirm if you would like to include lower case characters?");
   if (hasLowerCase === true) {
-    //if user selects true, then console.log "User chooses lower case character.""
+    //if user clicks ok, then console.log "User chooses to include lower case characters.""
     console.log("User chooses to include lower case characters.")
   }
 
   //I created this Variable to store boolean answer from user asking if they want to include upper case characters. 
   var hasUpperCase = confirm("Click Ok to confirm if you would like to include upper case characters?");
   if (hasUpperCase === true) {
-    //if user selects true, then console.log "User chooses lower case character.""
+    //if user clicks ok, then console.log "User chooses lower case character.""
     console.log("User chooses to include upper case characters.")
   }
 
   //I created this Variable to store boolean answer from user asking if they want to include numbers. 
   var hasNumbers = confirm("Click Ok to confirm if you would like to include numbers?");
   if (hasNumbers === true) {
-    //if user selects true, then console.log "User chooses lower case character.""
+    //if user clicks ok, then console.log "User chooses lower case character.""
     console.log("User chooses to include numbers.")
   }
 
   //I created this Variable to store boolean answer from user asking if they want to include  special characters. 
   var hasSpecialCharacters = confirm("Click Ok to confirm if you would like to use special characters?");
   if (hasSpecialCharacters === true) {
-    //if user selects true, then console.log"User chooses special characters.""
+    //if user clicks ok, then console.log"User chooses special characters.""
     console.log("User chooses to include special characters.")
   }
 
