@@ -19,64 +19,67 @@ function generatePassword() {
   var specialChar = ['@', '%', '+', '\\', ',', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.']
   var inputPassword = false;
 
-  //variable to store user input for the length of password
+  //I setup a variable to store the user input for the length of password.
   
   if (inputPassword !== 8 || inputPassword !== 128) {
          inputPassword = parseInt(prompt("How long would you like your password to be?"));
   }
  
-  //conditional to check if user input is at least 8 characters
+  //This is the conditional to check if the user input is at least 8 characters
   if (inputPassword < 8 ) {
-    alert("Please enter at least 8 characters");
+    alert("Please enter at least 8 characters.");
     return;
   }
 
   //conditional to check if user input is greater then 128 characters
   if (inputPassword > 128) {
-    alert("Please enter less then 128 characters");
+    alert("Please enter less then 128 characters.");
     return;
   }
-  //Variable to store boolean to include lower case or not. 
+  //I created this Variable to store boolean answer from user asking if they want to include lower case characters. 
   var hasLowerCase = confirm("Click Ok to confirm if you would like to include lower case characters?");
 
-  //Variable to store boolean to include upper case or not. 
+  //I created this Variable to store boolean answer from user asking if they want to include upper case characters. 
   var hasUpperCase = confirm("Click Ok to confirm if you would like to include upper case characters?");
 
-  //Variable to store boolean to include numbers or not. 
+  //I created this Variable to store boolean answer from user asking if they want to include numbers. 
   var hasNumbers = confirm("Click Ok to confirm if you would like to include numbers?");
 
-  //Variable to store boolean to include special characters or not. 
+  //I created this Variable to store boolean answer from user asking if they want to include  special characters. 
   var hasSpecialCharacters = confirm("Click Ok to confirm if you would like to use special characters?");
 
-  //Created choices array to concatinate user selections.
+  //I created an array named choices so I could concatinate user selections.
   var choices = [];
 
-  //If user input is true this will concatinate lower case selection to choices array.
+  //If user input equals to true this will concatinate lower case selection to choices array.
   if (hasLowerCase === true) {
     choices = choices.concat(charLowerCase);
   }
 
-  //If user input is true this will concatinate upper case selection to choices array.
+  //If user input equals to true this will concatinate upper case selection to choices array.
   if (hasUpperCase === true) {
     choices = choices.concat(charUpperCase);
   }
 
-  //If user input is true this will concatinate a number selection to choices array.
+  //If user input equals to true this will concatinate a number selection to choices array.
   if (hasNumbers === true) {
     choices = choices.concat(number);
   }
-  //If user input is true this will concatinate special character selection to choices array.
+  //If user input equals to true this will concatinate special character selection to choices array.
   if (hasSpecialCharacters === true) {
     choices = choices.concat(specialChar);
   }
   
-  
+  //I created an emtpy array called finalPassword. 
   var finalPassword = [];
+  
+  //This will loop through the info input by user in inputPassword variable and will be pushed into finalPassword array
   
   for (var i = 0; i < inputPassword; i++) {
     finalPassword.push(choices[Math.floor(Math.random() * choices.length)]);
     
   }
+  //The join method will return finalPassword array as a string. 
 return finalPassword.join('');
 
 }
